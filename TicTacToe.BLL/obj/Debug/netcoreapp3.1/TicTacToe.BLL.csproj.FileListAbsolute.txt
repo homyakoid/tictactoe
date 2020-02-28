@@ -1,0 +1,11 @@
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\bin\Debug\netcoreapp3.1\TicTacToe.BLL.deps.json
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\bin\Debug\netcoreapp3.1\TicTacToe.BLL.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\bin\Debug\netcoreapp3.1\TicTacToe.BLL.pdb
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\bin\Debug\netcoreapp3.1\TicTacToe.Core.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\bin\Debug\netcoreapp3.1\TicTacToe.Core.pdb
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.csprojAssemblyReference.cache
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.AssemblyInfoInputs.cache
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.AssemblyInfo.cs
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.csproj.CopyComplete
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.BLL\obj\Debug\netcoreapp3.1\TicTacToe.BLL.pdb

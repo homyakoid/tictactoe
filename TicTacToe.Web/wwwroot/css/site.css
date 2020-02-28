@@ -1,0 +1,151 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.player {
+    cursor: pointer;
+}
+
+.userInfo {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.main-block {
+    display: flex;
+    width: 500px;
+    justify-content:space-between;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.game-field {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+}
+
+    .game-field .row {
+        display: flex;
+        width: 170px;
+        justify-content: space-between;
+    }
+
+.game-field .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+    .game-field.disabled .cell {
+        opacity: 0.2;
+        cursor: default;
+    }
+
+.cell[cross]:before {
+    content: "x";
+    font-size: 27px;
+}
+
+.cell[zero]:before {
+    content: "o";
+    font-size: 27px;
+}
+
+.cell.win-location {
+    color: greenyellow;
+}
+
+#dialog-confirm {
+    display: none;
+}
+
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+.login-block {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+}
+

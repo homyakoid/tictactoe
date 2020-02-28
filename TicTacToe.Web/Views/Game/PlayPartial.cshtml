@@ -1,0 +1,56 @@
+﻿@model TicTacToe.Web.Models.GameSection.GameViewModel
+@using TicTacToe.BLL.Enums;
+
+@{
+    ViewData["Title"] = "Play";
+}
+
+<input type="hidden" id="gameId" value="@Model.GameID" />
+<input type="hidden" id="isOver" value="@Model.IsOver" />
+<input type="hidden" id="turn" value="@Model.Turn" />
+<input type="hidden" id="activePlayer" value="@Model.ActivePlayer" />
+
+<div class="main-block text-center">
+    <div class="player1-block">
+        <div id="player1">Player1: @Model.Player1</div>
+        <div id="player1Status">@Model.Player1Status</div>
+    </div>
+    <div class="game-field">
+        <div id="gameStatus">
+            @if (Model.GameStatus == GameStatus.GameOver)
+            {
+                <text>Game is over</text>
+            }
+            else if (Model.GameStatus == GameStatus.Player1Turn)
+            {
+                <text>Player1 turn</text>
+            }
+            else if (Model.GameStatus == GameStatus.Player2Turn)
+            {
+                <text>Player2 turn</text>
+            }
+        </div>
+        <div class="row">
+            <div class="cell btn-light" location="0" cross="@Model.Locations[0].Cross" zero="@Model.Locations[0].Zero"></div>
+            <div class="cell btn-light" location="1" cross="@Model.Locations[1].Cross" zero="@Model.Locations[1].Zero"></div>
+            <div class="cell btn-light" location="2" cross="@Model.Locations[2].Cross" zero="@Model.Locations[2].Zero"></div>
+        </div>
+        <div class="row">
+            <div class="cell btn-light" location="3" cross="@Model.Locations[3].Cross" zero="@Model.Locations[3].Zero"></div>
+            <div class="cell btn-light" location="4" cross="@Model.Locations[4].Cross" zero="@Model.Locations[4].Zero"></div>
+            <div class="cell btn-light" location="5" cross="@Model.Locations[5].Cross" zero="@Model.Locations[5].Zero"></div>
+        </div>
+        <div class="row">
+            <div class="cell btn-light" location="6" cross="@Model.Locations[6].Cross" zero="@Model.Locations[6].Zero"></div>
+            <div class="cell btn-light" location="7" cross="@Model.Locations[7].Cross" zero="@Model.Locations[7].Zero"></div>
+            <div class="cell btn-light" location="8" cross="@Model.Locations[8].Cross" zero="@Model.Locations[8].Zero"></div>
+        </div>
+        <a href="#" id="closeGame">Close</a>
+    </div>
+    <div class="player2-block">
+        <div id="player2">Player2: @Model.Player2</div>
+        <div id="player2Status">@Model.Player2Status</div>
+    </div>
+</div>
+
+

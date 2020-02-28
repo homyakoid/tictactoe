@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TicTacToe</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/jquery/dist/css/jquery-ui.css" />
+    <link rel="stylesheet" href="~/css/site.css" runat="server" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery-ui.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+</head>
+<body>
+    <header>
+        <div class="border-bottom box-shadow">
+            <div class="container">
+                <h2>TicTacToe</h2>
+                <div class="userInfo">
+                    <div>@User.Identity.Name</div>
+                    <a href="@Url.Action("Logoff", "Account")">Logoff</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div id="dialog-confirm" title="Hello"></div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - TicTacToe
+        </div>
+    </footer>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var connectionGame = new signalR.HubConnectionBuilder().withUrl("/gameHub").build();
+
+    connectionGame.on("RemovePlayer", function (userName) {
+        $("#" + userName, "#playersList").remove();
+    });
+
+    connectionGame.on("AddPlayer", function (userName) {
+        if ("@User.Identity.Name" != userName) {
+            if ($("#" + userName, "#playersList").length == 0) {
+                $("#playersList").prepend("<div id='" + userName + "' class='player'>" + userName + "</div>");
+            }
+        }
+    });
+
+    connectionGame.on("InvitationSent", function (player1, gameId) {
+        $("#dialog-confirm").html("User " + player1 + " has invited you. Do you want to play?");
+        $("#dialog-confirm").dialog({
+            resizable: false,
+            closeOnEscape: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            buttons: {
+                Ok: function () {
+                    $.ajax({
+                        url: "@Url.Action("PlayPartial", "Game")",
+                        type: "GET",
+                        data: {
+                            gameId: gameId
+                        },
+                        success: function (html) {
+                            $("main").html(html);
+                            history.pushState(null, "Play", "/Game/Play?gameId=" + gameId);
+                            connectionGame.invoke("InvitationAccepted", player1, gameId);
+                        }
+                    });
+                    $(this).dialog("close");
+
+                },
+                Cancel: function () {
+                    connectionGame.invoke("InvitationRejected", player1, gameId);
+                    $(this).dialog("close");
+                }
+            }
+        });
+        $(this).dialog("open");
+    });
+
+    connectionGame.on("InvitationAccepted", function () {
+        $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Online");
+        $("#gameStatus").text($("#turn").val() + " turn");
+    });
+
+    connectionGame.on("InvitationRejected", function () {
+        $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Leave");
+        $("#isOver").val(true).change();
+    });
+
+    connectionGame.on("MoveDone", function (movePosition) {
+        var activePlayer = $("#activePlayer").val();
+        if (activePlayer == "@TicTacToe.BLL.Enums.PlayerNumber.Player1") {
+            $(".cell[location='" + movePosition + "']").attr("zero", "zero");
+        }
+        else if (activePlayer == "@TicTacToe.BLL.Enums.PlayerNumber.Player2") {
+            $(".cell[location='" + movePosition + "']").attr("cross", "cross");
+        }
+        $("#turn").val(activePlayer).change();
+    });
+
+    connectionGame.on("GameIsOver", function (winCombination, winner) {
+        if (winCombination) {
+            var classToAdd;
+            var activePlayer = $("#activePlayer").val();
+            if (activePlayer == winner) {
+                classToAdd = "bg-success";
+            }
+            else {
+                classToAdd = "bg-danger";
+            }
+
+            $.each(winCombination, function (key, value) {
+                $(".cell[location='" + value + "']").addClass(classToAdd);
+            });
+        }
+
+        $("#isOver").val(true).change();
+    });
+
+    connectionGame.on("OpponentBack", function () {
+        if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1") {
+            $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Online");
+        }
+        else if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2") {
+            $("#player1Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Online");
+        }
+    });
+
+    connectionGame.on("ActiveUserBack", function () {
+        if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1") {
+            $("#player1Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Online");
+        }
+        else if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2") {
+            $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Online");
+        }
+    });
+
+    connectionGame.on("OpponentLost", function (activePlayer) {
+        if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1") {
+            $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Pending");
+        }
+        else if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2") {
+            $("#player1Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Pending");
+        }
+    });
+
+    connectionGame.on("CloseGame", function () {
+        if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1") {
+            $("#player2Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Leave");
+        }
+        else if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2") {
+            $("#player1Status").text("@TicTacToe.BLL.Enums.PlayerStatus.Leave");
+        }
+
+        $("#isOver").val(true).change();
+    });
+
+    connectionGame.on("Logoff", function () {
+        if ($("#dialog-confirm").is(":visible")) {
+            $("#dialog-confirm").dialog("close");
+        }
+
+        window.location = "@Url.Action("Logoff", "Account")";
+    });
+
+    connectionGame.start();
+
+    $(document).on("click", ".cell", function () {
+        if (!$("#isOver").val()) {
+            if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1"
+                && $("#turn").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player1"
+                && !$(this).attr("cross")) {
+                $(this).attr("cross", "cross");
+                $("#turn").val("@TicTacToe.BLL.Enums.PlayerNumber.Player2").change();
+                connectionGame.invoke("MoveDone", parseInt($("#gameId").val()), parseInt($(this).attr("location")));
+            }
+            else if ($("#activePlayer").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2"
+                && $("#turn").val() == "@TicTacToe.BLL.Enums.PlayerNumber.Player2"
+                && !$(this).attr("zero")) {
+                $(this).attr("zero", "zero");
+                $("#turn").val("@TicTacToe.BLL.Enums.PlayerNumber.Player1").change();
+                connectionGame.invoke("MoveDone", parseInt($("#gameId").val()), parseInt($(this).attr("location")));
+            }
+        }
+    });
+
+    $(document).on("click", "#closeGame", function () {
+        $.ajax({
+            url: "@Url.Action("IndexPartial", "Home")",
+            type: "GET",
+            success: function (html) {
+                connectionGame.invoke("CloseGame", parseInt($("#gameId").val()));
+                $("main").html(html);
+                history.pushState(null, "Home", "/");
+            }
+        });
+    });
+
+    $(document).on("change", "#turn", function () {
+        $("#gameStatus").text($(this).val() + " turn");
+    });
+
+    $(document).on("change", "#isOver", function () {
+        $("#gameStatus").text("Game is over");
+    });
+
+    $(document).on("click", ".player", function () {
+        var player2 = $(this).attr("id");
+        $.ajax({
+            url: "@Url.Action("Play", "Game")",
+            type: "POST",
+            data: {
+                player2: player2,
+                player1: "@User.Identity.Name"
+            },
+            success: function (html) {
+                $("main").html(html);
+                history.pushState(null, "Play", "/Game/Play?gameId=" + $("#gameId").val());
+                connectionGame.invoke("InvitePlayer", player2, parseInt($("#gameId").val()));
+            }
+        });
+    });
+</script>

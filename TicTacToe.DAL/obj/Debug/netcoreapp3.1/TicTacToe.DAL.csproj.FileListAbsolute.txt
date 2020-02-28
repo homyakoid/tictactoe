@@ -1,0 +1,13 @@
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.DAL.deps.json
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.DAL.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.AssemblyInfoInputs.cache
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.AssemblyInfo.cs
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.DAL.pdb
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.pdb
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.DAL.runtimeconfig.json
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.DAL.runtimeconfig.dev.json
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.csprojAssemblyReference.cache
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.Core.dll
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\bin\Debug\netcoreapp3.1\TicTacToe.Core.pdb
+C:\Users\natal\source\repos\TicTacToe\TicTacToe.DAL\obj\Debug\netcoreapp3.1\TicTacToe.DAL.csproj.CopyComplete

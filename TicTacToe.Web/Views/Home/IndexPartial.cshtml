@@ -1,0 +1,17 @@
+﻿@model TicTacToe.Web.Models.HomeSection.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <br />
+    <h3>Select opponent</h3>
+    <div id="playersList">
+        @foreach (var player in Model.Players)
+        {
+            <div id="@player.NickName" class="player">@player.NickName</div>
+        }
+    </div>
+</div>
+

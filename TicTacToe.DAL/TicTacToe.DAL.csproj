@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200220085728_InitialMigration.cs" />
+    <Compile Remove="Migrations\20200220085728_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200221173047_Migration01.cs" />
+    <Compile Remove="Migrations\20200221173047_Migration01.Designer.cs" />
+    <Compile Remove="Migrations\20200221190903_Migration02.cs" />
+    <Compile Remove="Migrations\20200221190903_Migration02.Designer.cs" />
+    <Compile Remove="Migrations\20200227111706_Migration03.cs" />
+    <Compile Remove="Migrations\20200227111706_Migration03.Designer.cs" />
+    <Compile Remove="Migrations\20200227122737_Migration04.cs" />
+    <Compile Remove="Migrations\20200227122737_Migration04.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicTacToe.Core\TicTacToe.Core.csproj" />
+  </ItemGroup>
+
+</Project>
