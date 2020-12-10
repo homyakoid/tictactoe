@@ -5114,11 +5114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.DAL\\TicTacToe.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.DAL\\TicTacToe.DAL.csproj",
       "projectName": "TicTacToe.DAL",
-      "projectPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.DAL\\TicTacToe.DAL.csproj",
+      "projectPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.DAL\\TicTacToe.DAL.csproj",
       "packagesPath": "C:\\Users\\natal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.DAL\\obj\\",
+      "outputPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5137,8 +5137,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.Core\\TicTacToe.Core.csproj": {
-              "projectPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.Core\\TicTacToe.Core.csproj"
+            "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.Core\\TicTacToe.Core.csproj": {
+              "projectPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.Core\\TicTacToe.Core.csproj"
             }
           }
         }
@@ -5190,7 +5190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

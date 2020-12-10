@@ -8281,11 +8281,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.Web\\TicTacToe.Web.csproj",
+      "projectUniqueName": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.Web\\TicTacToe.Web.csproj",
       "projectName": "TicTacToe.Web",
-      "projectPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.Web\\TicTacToe.Web.csproj",
+      "projectPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.Web\\TicTacToe.Web.csproj",
       "packagesPath": "C:\\Users\\natal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.Web\\obj\\",
+      "outputPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8304,11 +8304,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.BLL\\TicTacToe.BLL.csproj": {
-              "projectPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.BLL\\TicTacToe.BLL.csproj"
+            "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.BLL\\TicTacToe.BLL.csproj": {
+              "projectPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.BLL\\TicTacToe.BLL.csproj"
             },
-            "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.DAL\\TicTacToe.DAL.csproj": {
-              "projectPath": "C:\\Users\\natal\\source\\repos\\TicTacToe\\TicTacToe.DAL\\TicTacToe.DAL.csproj"
+            "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.DAL\\TicTacToe.DAL.csproj": {
+              "projectPath": "C:\\Users\\natal\\Source\\Repos\\tictactoe\\TicTacToe.DAL\\TicTacToe.DAL.csproj"
             }
           }
         }
@@ -8345,7 +8345,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

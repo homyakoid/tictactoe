@@ -85,6 +85,7 @@ namespace TicTacToe.Web.Controllers
         public async Task<IActionResult> Logoff()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             return RedirectToAction("Login", "Account");
         }
 
